@@ -9,8 +9,15 @@
 create solution test
 	set journaling false
 	set tracing true
-	set version 1.0.2
+	set version 1.0.4
 	create messagechannel channel_1
+		set parser xml-parser.xml_parser_1
+	end
+
+	create xml-parser xml_parser_1
+		set datamodelbundle cim_xsd
+		set rootelementname person
+		set namespace NULL_NAMESPACE_URI
 	end
 
 	create file-adapter-outbound file_adapter_outbound_1
